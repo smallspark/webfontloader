@@ -78,5 +78,5 @@ Put it to use
 Check out [the examples](examples.html) for a few ideas of how to use events.
 
 
-[fvd]: /fvd.html
+[fvd]: fvd.html
 
