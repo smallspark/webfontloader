@@ -1,7 +1,10 @@
 ---
 layout: default
-header: "WebFont Loader gives you control when using linked fonts via @font-face."
+header: "WebFont Loader"
 ---
+
+It gives you control when using linked fonts via @font-face.
+===========================================================
 
 Web fonts may be the best thing to happen to web design in years, but that
 doesn't mean there aren't some tricky issues to overcome. One of the most
@@ -22,8 +25,8 @@ have completely loaded. Once you know that, you can do cool things with, like
 Quick Start
 -----------
 
-The simplest thing to do with WebFont Loader to get some fonts from [Google's 
-Font API](http://code.google.com/apis/webfonts/), and control the FOUT.
+The simplest thing to do with WebFont Loader: some fonts from [Google's Font
+API](http://code.google.com/apis/webfonts/), and control the FOUT in FireFox.
 
 {% highlight html %}
 <!doctype html>

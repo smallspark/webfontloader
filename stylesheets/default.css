@@ -1,5 +1,5 @@
 body {
-  width: 500px;
+  width: 550px;
   margin: 0 auto;
   font-family: "facitweb-1","facitweb-2",sans-serif;
   line-height: 1.6;
@@ -19,6 +19,7 @@ h1, h2 {
 #header h1 {
   font-size: 2em;
   margin-bottom: 0;
+  line-height: 1;
 }
 
 #header .nav {
