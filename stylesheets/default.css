@@ -12,13 +12,29 @@ h1, h2 {
   color: #000;
 }
 
-h1 {
+#header {
+  margin-bottom: 2em;
+}
+
+#header h1 {
   font-size: 2em;
+  margin-bottom: 0;
+}
+
+#header .nav {
+  font-size: 0.8em;
+  word-spacing: .5em;
+  color: #ddd;
 }
 
 h2 {
   margin-top: 1.5em;
   font-size: 1.5em;
+}
+
+a,
+a:visited {
+  color: #00a;
 }
 
 code {
