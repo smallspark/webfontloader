@@ -20,5 +20,8 @@ google:
 typekit:
   - typekit/typekit_script.js
 
+typefront:
+  - typefront/typefront.js
+
 custom:
   - custom/customcss.js
