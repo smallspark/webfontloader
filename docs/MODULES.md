@@ -30,6 +30,20 @@ ID within Typekit's Kit Editor interface.
 
 Learn more about [Typekit][tk].
 
+## TypeFront
+
+When using TypeFront, you specify a set of font IDs and a set of corresponding font families.
+
+You can find your font ID and family name by clicking on 'Font information' within the TypeFront interface.
+
+    WebFont.load({
+      typefront: {
+        ids: ['xxxxxx', 'xxxxxx'],
+        families: ['Font1', 'Font2']
+      }
+    });
+
+Learn more about [TypeFront](http://typefront.com).
 
 ## Custom
 

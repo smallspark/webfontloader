@@ -33,6 +33,18 @@ Alternatively, load fonts from Typekit. Just specify your Kit ID.
       });
     </script>
 
+You can load fonts served by [TypeFront](http://typefront.com) in the following way:
+
+    <script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+    <script>
+      WebFont.load({
+        typefront: {
+          ids: ['xxxxxx', 'xxxxxx'],
+          families: ['Font1', 'Font2']
+        }
+      });
+    </script>
+
 Learn more about the
 [modules][mod].
 
