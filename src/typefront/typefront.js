@@ -5,10 +5,11 @@ webfont.TypeFront = function(userAgent, domHelper, configuration) {
 };
 
 webfont.TypeFront.NAME = 'typefront';
-webfont.TypeFront.BASE_URL = 'http://typefront.com/fonts/';
+webfont.TypeFront.BASE_URL = 'typefront.com/fonts/';
 
-webfont.TypeFront.prototype.cssUrl = function(id) {
-  return webfont.TypeFront.BASE_URL + id + '.css';
+webfont.TypeFront.prototype.cssUrl_ = function(id) {
+  var protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+  return protocol + webfont.TypeFront.BASE_URL + id + '.css';
 }
 
 webfont.TypeFront.prototype.supportUserAgent = function(userAgent, support) {
@@ -25,10 +26,10 @@ webfont.TypeFront.prototype.load = function(onReady) {
   for (var i = 0; i < ids.length; i++) {
     if (nonBlockingIe) {
       domHelper.whenBodyExists(function() {
-        domHelper.insertInto('head', domHelper.createCssLink(this.cssUrl(ids[i])));
+        domHelper.insertInto('head', domHelper.createCssLink(this.cssUrl_(ids[i])));
       });
     } else {
-      domHelper.insertInto('head', domHelper.createCssLink(this.cssUrl(ids[i])));
+      domHelper.insertInto('head', domHelper.createCssLink(this.cssUrl_(ids[i])));
     }
   }
 

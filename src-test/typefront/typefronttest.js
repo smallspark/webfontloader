@@ -1,6 +1,6 @@
 var TypeFrontTest = TestCase('TypeFrontTest');
 
-TypeFrontTest.prototype.testCallOnReady = function() {
+TypeFrontTest.prototype.testInsertsCorrectCSS = function() {
   var inserts = [];
   var links = [];
   var fakeDomHelper = {
