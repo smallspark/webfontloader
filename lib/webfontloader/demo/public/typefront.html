@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+  <script type="text/javascript">
+    var began_loading = (new Date()).getTime();
+  </script>
+  <link href="/basic.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    h1 { font-family: 'CAC Champagne'; font-weight: normal; }
+    h2 { font-family: 'AlexandriaFLF'; font-weight: normal; }
+
+    .font-load-state { 
+      margin: 16px 0 4px; 
+      overflow: hidden; 
+      width: 100%
+    }
+    .font-load-state span { 
+      float: left; 
+      background-color: #ccc; 
+      color: white; 
+      font-weight: bold; 
+      padding: 10px; 
+    }
+    .overall-state .no-js { background-color: red; }
+    .wf-loading .overall-state .no-js, 
+    .wf-active .overall-state .no-js, 
+    .wf-inactive .overall-state .no-js { background-color: #ccc; }
+    .wf-loading .overall-state .loading { background-color: orange; }
+    .wf-active .overall-state .active { background-color: green; }
+    .wf-inactive .overall-state .inactive { background-color: red; }
+    
+    .wf-cacchampagne-n4-loading .cacchampagne-state .loading { background-color: orange; }
+    .wf-cacchampagne-n4-active .cacchampagne-state .active { background-color: green; }
+    .wf-cacchampagne-n4-inactive .cacchampagne-state .inactive { background-color: red; }
+    
+    .wf-alexandriaflf-n4-loading .alexandriaflf-state .loading { background-color: orange; }
+    .wf-alexandriaflf-n4-active .alexandriaflf-state .active { background-color: green; }
+    .wf-alexandriaflf-n4-inactive .alexandriaflf-state .inactive { background-color: red; }
+
+    #javascript-event-log { margin: 24px 0; padding-left: 16px; }
+    #javascript-event-log li { margin: 16px 0; }
+  </style>
+</head>
+<body>
+  <h1>
+    The quick brown fox jumped over the lazy dog.
+  </h1>
+  <h2>
+    The sly dog lifted a paw and swatted the cheeky fox.
+  </h2>
+  <hr>
+  <div class="font-load-state overall-state">
+    <span class="no-js">JS Not Loaded</span> 
+    <span class="loading">Fonts Loading</span> 
+    <span class="active">Fonts Active</span> 
+    <span class="inactive">Fonts Inactive</span>
+  </div>
+  <div class="font-load-state cacchampagne-state">
+    <span class="loading">CAC Champagne Loading</span> 
+    <span class="active">CAC Champage Active</span> 
+    <span class="inactive">CAC Champagne Inactive</span>
+  </div>
+  <div class="font-load-state alexandriaflf-state">
+    <span class="loading">Alexandria FLF Loading</span> 
+    <span class="active">Alexandria FLF Active</span> 
+    <span class="inactive">Alexandria FLF Inactive</span> 
+  </div>
+  <ul id="javascript-event-log"></ul>
+  <p>
+    <a href="#" onclick="document.getElementsByTagName('body')[0].style.color = '#fff';return false;">Hide Page</a> |
+    <a href="/typefront.html">Reload Cached</a>
+  </p>
+  <p>
+    The goal of this page is simply to use a font served by TypeFront via the JavaScript API.
+  </p>
+  <script type="text/javascript" src="/webfont.js"></script>
+  <script type="text/javascript">
+    WebFont.load({
+      typefront: {
+        ids: ['825588119', '825588113'],
+        families: ['AlexandriaFLF', 'CAC Champagne']
+      },
+      loading: function() { logEvent('loading'); },
+      active: function() { logEvent('active'); },
+      inactive: function() { logEvent('inactive'); },
+      fontloading: function(fontFamily, fontDescription) { logEvent('"' + fontFamily + '" loading'); },
+      fontactive: function(fontFamily, fontDescription) { logEvent('"' + fontFamily + '" active'); },
+      fontinactive: function(fontFamily, fontDescription) { logEvent('"' + fontFamily + '" inactive'); }
+    });
+
+    function logEvent(eventName) {
+      var time = (((new Date()).getTime() - began_loading) / 1000);
+      var eventLog = document.getElementById('javascript-event-log');
+      eventLog.innerHTML = eventLog.innerHTML + '<li><b>' + eventName + '</b> event (' + time + ')</li>';
+    }
+  </script>
+</body>
+</html>
